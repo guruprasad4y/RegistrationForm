@@ -1,0 +1,82 @@
+
+<div style="margin-top: 100px; padding-left: 200px; padding-right: 200px">
+  <form class="row g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" #email />
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword4"
+        #password
+      />
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="1234 Main St"
+        #address
+      />
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Apartment, studio, or floor"
+        #address2
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity" #city />
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option *ngFor="let state of StateList" [value]="state.Id">
+          {{ state.Name }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip" #zipcode/>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Check me out </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" (click)="submit()" class="btn btn-primary">
+        Sign in
+      </button>
+    </div>
+  </form>
+  <hr />
+  <!-- <div>
+    <p>Email:{{ sEmail }}</p>
+    <p>Password:{{ sPassword }}</p>
+    <p>Address:{{ sAddress }}</p>
+    <p>Address2:{{ sAddress }}</p>
+    <p>State:{{ sState }}</p>
+    <p>City:{{ sCity }}</p>
+    <p>Zipcode:{{ sZipcode }}</p>
+  </div> -->
+</div>
+<app-customer-details 
+*ngIf="isSubmitted" [test]="'sampletestdata'"
+ [RegistrationForm]="CustomerDetails"
+ (evtfeedbacinformation)="receivedfeedbackdata($event)"
+>
+
+</app-customer-details>

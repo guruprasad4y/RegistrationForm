@@ -1,0 +1,24 @@
+<table class="table table-stripped table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Address2</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Zipcode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of ICForms">
+            <td>{{item?.Email}}</td>
+            <td>{{item?.Password}}</td>
+            <td>{{item?.Address}}</td>
+            <td>{{item?.Address2}}</td>
+            <td>{{item?.State}}</td>
+            <td>{{item?.City}}</td>
+            <td>{{item?.Zipcode}}</td>
+        </tr>
+    </tbody>
+</table>
